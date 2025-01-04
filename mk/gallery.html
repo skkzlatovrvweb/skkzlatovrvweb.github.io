@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерија</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo"><img src="../data/logo.png" alt="СКК Златоврв"></div>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="menu">
+        <li><a href="../mk/index.html">Почетна</a></li>
+        <li><a href="../mk/about.html">За Нас</a></li>
+		<li><a href="../mk/activities.html">Активности</a></li>
+        <li><a href="../mk/gallery.html" style="text-decoration: underline;">Галерија</a></li>
+        <li class="has-submenu">
+		    <span>Насоки</span>
+            <ul class="submenu">
+                <li><a href="lead_routes.html">Lead</a></li>
+                <li><a href="boulder_routes.html">Boulder</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Контакт</a></li>
+		<li class="language"><a href="../en/gallery.html">mk/en</a></li>
+    </ul>
+</nav>
+
+<main>
+   <section class="centenary-section">
+     <h1>СКК ЗЛАТОВРВ ГАЛЕРИЈА &copy;</h1>
+   </section>
+   <section class="carousel-section">
+        <div class="carousel" id="gallery1">
+            <div class="carousel-images">
+                <img src="../data/gallery/1.jpg" alt="Nature 1">
+				<img src="../data/gallery/2.jpg" alt="Nature 1">
+				<img src="../data/gallery/3.jpg" alt="Nature 1">
+				<img src="../data/gallery/4.jpg" alt="Nature 1">
+				<img src="../data/gallery/5.jpg" alt="Nature 1">
+				<img src="../data/gallery/6.jpg" alt="Nature 1">
+				<img src="../data/gallery/7.jpg" alt="Nature 1">
+				<img src="../data/gallery/8.jpg" alt="Nature 1">
+				<img src="../data/gallery/9.jpg" alt="Nature 1">
+				<img src="../data/gallery/10.jpg" alt="Nature 1">
+				<img src="../data/gallery/11.jpg" alt="Nature 1">
+				<img src="../data/gallery/12.jpg" alt="Nature 1">
+				<img src="../data/gallery/13.jpg" alt="Nature 1">
+				<img src="../data/gallery/14.jpg" alt="Nature 1">
+				<img src="../data/gallery/15.jpg" alt="Nature 1">
+				<img src="../data/gallery/16.jpg" alt="Nature 1">
+				<img src="../data/gallery/17.jpg" alt="Nature 1">
+				<img src="../data/gallery/18.jpg" alt="Nature 1">
+				<img src="../data/gallery/19.jpg" alt="Nature 1">
+				<img src="../data/gallery/20.jpg" alt="Nature 1">
+				<img src="../data/gallery/21.jpg" alt="Nature 1">
+				<img src="../data/gallery/22.jpg" alt="Nature 1">
+				<img src="../data/gallery/23.jpg" alt="Nature 1">
+            </div>
+			<button class="carousel-btn prev" aria-label="Previous">&lt;</button>
+            <button class="carousel-btn next" aria-label="Next">&gt;</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 СКК Златоврв</p>
+</footer>
+
+<script>
+    // Carousel functionality
+    window.addEventListener('load', function () {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const imagesWrapper = carousel.querySelector('.carousel-images');
+        const images = Array.from(imagesWrapper.children);
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+        let currentIndex = 0;
+
+        const updateCarousel = () => {
+            const carouselWidth = carousel.clientWidth;
+            const imageWidth = images[0].clientWidth;
+            const offset = (carouselWidth - imageWidth) / 2;
+
+            imagesWrapper.style.transform = `translateX(${offset - currentIndex * (imageWidth + 10)}px)`;
+
+            images.forEach((img, index) => {
+                img.classList.toggle('active', index === currentIndex);
+            });
+        };
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        updateCarousel();
+    });
+});
+
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('open');
+    });
+
+</script>
+
+</body>
+</html>

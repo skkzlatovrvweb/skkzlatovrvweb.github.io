@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo"><img src="../data/logo.png" alt="SKK Zlatovrv"></div>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+		<li><a href="activities.html">Activities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="has-submenu">
+            <span>Routes</span>
+            <ul class="submenu">
+                <li><a href="lead_routes.html">Lead</a></li>
+                <li><a href="boulder_routes.html">Boulder</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html" style="text-decoration: underline;">Contact</a></li>
+        <li class="language"><a href="../mk/contact.html">en/mk</a></li>
+    </ul>
+</nav>
+
+<main>
+<section class="info-section2">
+<div class="contact-form-wrapper">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="submit-button">Send Message</button>
+      </div>
+    </form>
+  </div>
+  <section class="contact-icons-section">
+    <div class="contact-icons-wrapper">
+        <!-- Лева страна - текст -->
+        <div class="contact-text">
+            skkzlatovrv@gmail.com
+        </div>
+        <!-- Десна страна - икони -->
+        <div class="contact-icons">
+            <a href="https://www.facebook.com/skkzlatovrv" target="_blank" class="icon-link">
+                <img src="../data/contact/fb.png" alt="Facebook Icon">
+            </a>
+            <a href="https://www.instagram.com/scc_zlatovrv/" target="_blank" class="icon-link">
+                <img src="../data/contact/in.png" alt="Instagram Icon">
+            </a>
+        </div>
+    </div>
+</section>
+  
+</section>
+
+</main>
+
+
+<footer>
+    <p>&copy; 2024 SCC Zlatovrv</p>
+</footer>
+
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>
